@@ -12,10 +12,23 @@
     </div>
     <br />
     <input type="button" id="goodMorning" onclick="
+    var hour = new Date().getHours();
+    var greeting, color;
+
+    if (hour >= 4 && hour < 12) {
+      greeting = 'おはようございます！';
+      color = '#0068B7';
+    } else if (hour >= 12 && hour < 18) {
+      greeting = 'こんにちは！';
+      color = '#F39800';
+    } else {
+      greeting = 'こんばんは！';
+      color = '#920783';
+    }
     var message = document.getElementById('message');
-    message.textContent = 'おはようございます！';
-    message.style.backgroundColor = '#0068B7';"
-    value="おはようございます！" />
+    message.textContent = greeting;
+    message.style.backgroundColor = color;"
+    value="ごあいさつ" />
   </div>
 </body>
 </html>
